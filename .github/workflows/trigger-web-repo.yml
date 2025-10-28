@@ -1,0 +1,25 @@
+name: Trigger Web Repo Content Generation
+
+on:
+  issues:
+    types: [closed, reopened, edited]
+  workflow_dispatch:
+
+jobs:
+  trigger-web-content:
+    runs-on: ubuntu-latest
+
+    # Only run if issue has 'tool' or 'reference' label
+    if: contains(github.event.issue.labels.*.name, 'tool') || contains(github.event.issue.labels.*.name, 'reference')
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Trigger web repo workflow
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.WEB_REPO_PAT }}" \
+            https://api.github.com/repos/agentichumans/web/actions/workflows/generate-content.yml/dispatches \
+            -d '{"ref":"main"}'
