@@ -76,26 +76,24 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: notes
-    attributes:
-      label: Notes
-      description: Your thoughts, key takeaways, or why this is valuable (Markdown supported)
-      placeholder: |
-        ## Key Takeaways
-        - Insight 1
-        - Insight 2
-
-        ## Why This Matters
-        Explain why this is relevant to the AgenticHumans community...
-    validations:
-      required: false
-
   - type: markdown
     attributes:
       value: |
         ---
-        **Publishing:** This reference will be published when you **close this issue**.
-        - Keep the issue **open** while drafting/editing
-        - **Close the issue** when ready to publish
-        - Reopen to unpublish or edit further
+
+        ## How to Publish
+
+        1. **Create this issue** with the basic info above
+        2. **Discuss and share thoughts** in comments (optional)
+        3. **When ready to publish**, an admin adds a closing comment with notes:
+           ```
+           ## Key Takeaways
+           - Point 1
+           - Point 2
+
+           ## Why This Matters
+           Explain relevance to the community...
+           ```
+        4. **Admin closes the issue** - this publishes the reference with notes
+
+        The closing comment becomes the published notes!
