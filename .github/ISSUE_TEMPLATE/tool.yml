@@ -73,29 +73,28 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: review
-    attributes:
-      label: Review
-      description: Your review, experience, or thoughts about this tool (Markdown supported)
-      placeholder: |
-        ## What I like
-        - Feature 1
-        - Feature 2
-
-        ## What could be better
-        - Limitation 1
-
-        ## Best for
-        Describe who would benefit most from this tool...
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
         ---
-        **Publishing:** This tool will be published when you **close this issue**.
-        - Keep the issue **open** while drafting/editing
-        - **Close the issue** when ready to publish
-        - Reopen to unpublish or edit further
+
+        ## How to Publish
+
+        1. **Create this issue** with the basic info above
+        2. **Discuss and refine** in comments (optional)
+        3. **When ready to publish**, add a closing comment with your review:
+           ```
+           ## My Review
+
+           What I like:
+           - Point 1
+           - Point 2
+
+           What could be better:
+           - Point 1
+
+           Best for: [who would benefit]
+           ```
+        4. **Close the issue** - this publishes your review to the website
+
+        The closing comment becomes the published review!
