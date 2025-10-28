@@ -1,0 +1,101 @@
+name: Reference Material
+description: Share an article, video, paper, or resource about AI and human-AI collaboration
+title: "[Reference] "
+labels: ["reference"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The title of the reference material
+      placeholder: "The Future of Human-AI Collaboration"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: What kind of reference is this?
+      options:
+        - Article
+        - Video
+        - Research Paper
+        - Book
+        - Podcast
+        - Tutorial
+        - Documentation
+        - Case Study
+        - Thread
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the reference material
+      placeholder: "https://example.com/article"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Who created this content?
+      placeholder: "Jane Smith"
+    validations:
+      required: false
+
+  - type: input
+    id: date
+    attributes:
+      label: Publication Date
+      description: When was this published? (YYYY-MM-DD or approximate)
+      placeholder: "2025-10-01"
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A brief summary of what this reference covers (2-3 sentences)
+      placeholder: "This article explores how AI assistants are changing the way developers work, focusing on practical examples of human-AI collaboration in software development."
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (e.g., "ai, research, collaboration")
+      placeholder: "ai, development, productivity"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Your thoughts, key takeaways, or why this is valuable (Markdown supported)
+      placeholder: |
+        ## Key Takeaways
+        - Insight 1
+        - Insight 2
+
+        ## Why This Matters
+        Explain why this is relevant to the AgenticHumans community...
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Publishing:** This reference will be published when you **close this issue**.
+        - Keep the issue **open** while drafting/editing
+        - **Close the issue** when ready to publish
+        - Reopen to unpublish or edit further

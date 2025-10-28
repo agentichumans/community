@@ -1,0 +1,101 @@
+name: Tool Recommendation
+description: Recommend an AI tool or service for the AgenticHumans community
+title: "[Tool] "
+labels: ["tool"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Tool Name
+      description: The name of the tool or service
+      placeholder: "Claude Code"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of tool is this?
+      options:
+        - AI Assistants & Chatbots
+        - Code Generation
+        - Content Creation
+        - Image Generation
+        - Audio & Music
+        - Video Production
+        - Productivity & Workflow
+        - Data Analysis
+        - Development Tools
+        - Design & UI
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of what this tool does (1-2 sentences)
+      placeholder: "An AI-powered development assistant that helps you write, debug, and understand code directly in your terminal."
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: The official website URL
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Pricing
+      description: What's the pricing model?
+      options:
+        - Free
+        - Freemium
+        - Paid
+        - Open Source
+        - Enterprise Only
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (e.g., "ai, coding, terminal")
+      placeholder: "ai, development, assistant"
+    validations:
+      required: false
+
+  - type: textarea
+    id: review
+    attributes:
+      label: Review
+      description: Your review, experience, or thoughts about this tool (Markdown supported)
+      placeholder: |
+        ## What I like
+        - Feature 1
+        - Feature 2
+
+        ## What could be better
+        - Limitation 1
+
+        ## Best for
+        Describe who would benefit most from this tool...
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Publishing:** This tool will be published when you **close this issue**.
+        - Keep the issue **open** while drafting/editing
+        - **Close the issue** when ready to publish
+        - Reopen to unpublish or edit further
